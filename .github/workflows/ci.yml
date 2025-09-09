@@ -5,6 +5,8 @@ on: [push, pull_request]
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+    env:
+      DB_CONNECTION_STRING: ${{ secrets.DB_CONNECTION_STRING }}
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js
