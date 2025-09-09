@@ -8,6 +8,10 @@
     "test": "jest --runInBand",
     "lint": "eslint ."
   },
+  
+"overrides": {
+  "debug": "4.3.4"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
