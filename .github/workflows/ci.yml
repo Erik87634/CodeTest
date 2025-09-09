@@ -18,4 +18,4 @@ jobs:
       - name: Run tests
         run: npm test
       - name: Build Docker image (packaging)
-        run: docker build -t ikea-lottery:ci . --progress=plain
+        run: docker build -t codetest:ci . --progress=plain
