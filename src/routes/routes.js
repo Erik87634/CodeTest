@@ -21,7 +21,6 @@ router.get('/entries', async (req, res) => {
 router.post('/draw', async (req, res) => {
   console.log("number of winners: " + req.body.numberOfWinners);
   if ('numberOfWinners' in req.body && Number.isInteger(req.body.numberOfWinners)) {
-    console.log("im in the correct if statement.")
     const result = await winnerService.drawWinners(req.body.numberOfWinners);
     if (result instanceof Error) {
       return res.status(result.statusCode).json({ message: result.message });
@@ -30,7 +29,6 @@ router.post('/draw', async (req, res) => {
     res.json(result);
   }
   else {
-    console.log("im going in here for some reason.")
     const result = await winnerService.drawWinner();
     if (result instanceof Error) {
       return res.status(result.statusCode).json({ message: result.message });
